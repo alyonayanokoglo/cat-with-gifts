@@ -337,9 +337,9 @@ function App() {
           {prediction && (
             <motion.div
               className="prediction-card"
-              initial={{ scale: 0, rotate: -180, opacity: 0 }}
-              animate={{ scale: 1, rotate: 0, opacity: 1 }}
-              exit={{ scale: 0, rotate: 180, opacity: 0 }}
+              initial={{ scale: 0, rotate: -180, opacity: 0, x: "-50%", y: "-50%" }}
+              animate={{ scale: 1, rotate: 0, opacity: 1, x: "-50%", y: "-50%" }}
+              exit={{ scale: 0, rotate: 180, opacity: 0, x: "-50%", y: "-50%" }}
               transition={{ type: "spring", stiffness: 200, damping: 20 }}
             >
               <div className="prediction-content">
