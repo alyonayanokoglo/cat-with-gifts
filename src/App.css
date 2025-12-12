@@ -1,0 +1,523 @@
+.app {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(135deg, #FFB6C1 0%, #FFC0CB 50%, #FFD4E5 100%);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.star {
+  position: absolute;
+  font-size: 2rem;
+  animation: float 3s ease-in-out infinite;
+  opacity: 0.6;
+}
+
+.star-1 {
+  top: 10%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.star-2 {
+  top: 20%;
+  right: 15%;
+  animation-delay: 0.5s;
+}
+
+.star-3 {
+  top: 60%;
+  left: 5%;
+  animation-delay: 1s;
+}
+
+.star-4 {
+  bottom: 15%;
+  right: 10%;
+  animation-delay: 1.5s;
+}
+
+.star-5 {
+  bottom: 30%;
+  left: 20%;
+  animation-delay: 2s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(180deg);
+  }
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.title {
+  font-size: clamp(1.8rem, 6vw, 2.5rem);
+  color: #fff;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 800;
+}
+
+.progress-container {
+  width: 100%;
+  max-width: 300px;
+  margin-bottom: 30px;
+}
+
+.progress-label {
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 10px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.progress-bar {
+  width: 100%;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #FF69B4, #FFB6C1, #FF1493);
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(255, 105, 180, 0.6);
+}
+
+.progress-text {
+  text-align: center;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-top: 8px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cat-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: 20px 0;
+}
+
+.cat {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.2));
+}
+
+.cat-face {
+  position: relative;
+  z-index: 2;
+}
+
+.cat-head {
+  width: 120px;
+  height: 100px;
+  background: #FFA500;
+  border-radius: 50% 50% 45% 45%;
+  position: relative;
+  z-index: 2;
+}
+
+.cat-ear {
+  width: 0;
+  height: 0;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  border-bottom: 40px solid #FFA500;
+  position: absolute;
+  top: -25px;
+}
+
+.cat-ear-left {
+  left: 10px;
+  transform: rotate(-15deg);
+}
+
+.cat-ear-right {
+  right: 10px;
+  transform: rotate(15deg);
+}
+
+.cat-ear::before {
+  content: '';
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 25px solid #FFB84D;
+  position: absolute;
+  top: 8px;
+  left: -15px;
+}
+
+.cat-eyes {
+  display: flex;
+  justify-content: space-around;
+  padding: 25px 20px 0;
+}
+
+.cat-eye {
+  width: 12px;
+  height: 16px;
+  background: #000;
+  border-radius: 50%;
+  animation: blink 4s infinite;
+}
+
+@keyframes blink {
+  0%, 48%, 52%, 100% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(0.1);
+  }
+}
+
+.cat-nose {
+  width: 12px;
+  height: 10px;
+  background: #FF69B4;
+  border-radius: 0 0 50% 50%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 55px;
+}
+
+.cat-mouth {
+  position: absolute;
+  top: 62px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 4px;
+}
+
+.cat-mouth-left,
+.cat-mouth-right {
+  width: 15px;
+  height: 8px;
+  border: 2px solid #000;
+  border-top: none;
+  border-radius: 0 0 15px 15px;
+}
+
+.cat-whiskers {
+  position: absolute;
+  top: 50px;
+}
+
+.cat-whiskers-left {
+  left: -40px;
+}
+
+.cat-whiskers-right {
+  right: -40px;
+}
+
+.whisker {
+  width: 35px;
+  height: 2px;
+  background: #000;
+  margin: 8px 0;
+  border-radius: 2px;
+}
+
+.cat-whiskers-left .whisker {
+  transform-origin: right;
+  transform: rotate(-10deg);
+}
+
+.cat-whiskers-right .whisker {
+  transform-origin: left;
+  transform: rotate(10deg);
+}
+
+.cat-body {
+  width: 100px;
+  height: 80px;
+  background: #FFA500;
+  border-radius: 50% 50% 40% 40%;
+  position: relative;
+  margin-top: -10px;
+  z-index: 1;
+}
+
+.cat-arms {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+}
+
+.cat-arm {
+  width: 25px;
+  height: 60px;
+  background: #FFA500;
+  border-radius: 40%;
+  position: absolute;
+  top: 10px;
+}
+
+.cat-arm-left {
+  left: -5px;
+  transform: rotate(-20deg);
+}
+
+.cat-arm-right {
+  right: -5px;
+  transform: rotate(20deg);
+}
+
+.gift-bag {
+  position: absolute;
+  font-size: 5rem;
+  bottom: -40px;
+  z-index: 3;
+  filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.3));
+}
+
+.permission-dialog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.dialog-content {
+  background: white;
+  border-radius: 24px;
+  padding: 40px 30px;
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.dialog-emoji {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.dialog-content h2 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.dialog-content p {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 30px;
+  line-height: 1.5;
+}
+
+.button-primary,
+.button-secondary {
+  width: 100%;
+  padding: 16px 24px;
+  border: none;
+  border-radius: 16px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 12px;
+}
+
+.button-primary {
+  background: linear-gradient(135deg, #FF69B4, #FF1493);
+  color: white;
+  box-shadow: 0 6px 20px rgba(255, 105, 180, 0.4);
+}
+
+.button-primary:active {
+  transform: scale(0.95);
+  box-shadow: 0 3px 10px rgba(255, 105, 180, 0.4);
+}
+
+.button-secondary {
+  background: #f0f0f0;
+  color: #666;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.button-secondary:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.prediction-card {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border-radius: 24px;
+  padding: 40px 30px;
+  max-width: 400px;
+  width: calc(100% - 40px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  z-index: 100;
+}
+
+.prediction-content {
+  text-align: center;
+}
+
+.prediction-icon {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.prediction-text {
+  font-size: 1.2rem;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  font-weight: 500;
+}
+
+.prediction-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.fallback-hint {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.9);
+  padding: 12px 24px;
+  border-radius: 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #FF69B4;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+  animation: bounce 1s infinite;
+}
+
+/* Адаптивность для маленьких экранов */
+@media (max-width: 375px) {
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .cat-head {
+    width: 100px;
+    height: 85px;
+  }
+
+  .cat-body {
+    width: 85px;
+    height: 70px;
+  }
+
+  .gift-bag {
+    font-size: 4rem;
+  }
+}
+
+/* Улучшения для ландшафтной ориентации */
+@media (orientation: landscape) and (max-height: 600px) {
+  .content {
+    padding: 10px;
+  }
+
+  .title {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+  }
+
+  .progress-container {
+    margin-bottom: 15px;
+  }
+
+  .cat-container {
+    margin: 10px 0;
+  }
+
+  .cat-head {
+    width: 90px;
+    height: 75px;
+  }
+
+  .cat-body {
+    width: 75px;
+    height: 60px;
+  }
+
+  .gift-bag {
+    font-size: 3.5rem;
+    bottom: -30px;
+  }
+}
+
