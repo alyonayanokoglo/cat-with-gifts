@@ -1,7 +1,7 @@
 .app {
   width: 100vw;
   height: 100vh;
-  background: linear-gradient(135deg, #FFB6C1 0%, #FFC0CB 50%, #FFD4E5 100%);
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
   position: relative;
   overflow: hidden;
   display: flex;
@@ -20,39 +20,155 @@
 
 .star {
   position: absolute;
-  font-size: 2rem;
   animation: float 3s ease-in-out infinite;
-  opacity: 0.6;
+  opacity: 0.9;
+  filter: drop-shadow(0 0 15px currentColor);
 }
 
 .star-1 {
   top: 10%;
   left: 10%;
+  color: #2E9CFF;
+  font-size: 4rem;
   animation-delay: 0s;
 }
 
 .star-2 {
   top: 20%;
   right: 15%;
+  color: #FF6B9D;
+  font-size: 3rem;
   animation-delay: 0.5s;
 }
 
 .star-3 {
   top: 60%;
   left: 5%;
+  color: #FF8E8E;
+  font-size: 3.5rem;
   animation-delay: 1s;
 }
 
 .star-4 {
   bottom: 15%;
   right: 10%;
+  color: #2E9CFF;
+  font-size: 4.5rem;
   animation-delay: 1.5s;
 }
 
 .star-5 {
   bottom: 30%;
   left: 20%;
+  color: #FF6B9D;
+  font-size: 3rem;
   animation-delay: 2s;
+}
+
+.star-6 {
+  top: 40%;
+  right: 5%;
+  color: #4DB8FF;
+  font-size: 2.5rem;
+  animation-delay: 2.5s;
+}
+
+.star-7 {
+  top: 35%;
+  left: 25%;
+  color: #FFA8A8;
+  font-size: 2rem;
+  animation-delay: 3s;
+}
+
+.swirl {
+  position: absolute;
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 2.5rem;
+  animation: rotate-swirl 8s linear infinite;
+}
+
+.swirl-1 {
+  top: 15%;
+  right: 25%;
+  animation-delay: 0s;
+}
+
+.swirl-2 {
+  bottom: 20%;
+  left: 15%;
+  animation-delay: 2s;
+}
+
+.swirl-3 {
+  top: 50%;
+  right: 10%;
+  animation-delay: 4s;
+}
+
+@keyframes rotate-swirl {
+  0% {
+    transform: rotate(0deg) scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: rotate(180deg) scale(1.2);
+    opacity: 0.5;
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+    opacity: 0.3;
+  }
+}
+
+.snowflake {
+  position: absolute;
+  color: white;
+  font-size: 1.5rem;
+  opacity: 0.8;
+  animation: fall linear infinite;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+.snowflake-1 {
+  left: 10%;
+  animation-duration: 8s;
+  animation-delay: 0s;
+}
+
+.snowflake-2 {
+  left: 30%;
+  animation-duration: 10s;
+  animation-delay: 2s;
+}
+
+.snowflake-3 {
+  left: 50%;
+  animation-duration: 9s;
+  animation-delay: 1s;
+}
+
+.snowflake-4 {
+  left: 70%;
+  animation-duration: 11s;
+  animation-delay: 3s;
+}
+
+.snowflake-5 {
+  left: 85%;
+  animation-duration: 12s;
+  animation-delay: 1.5s;
+}
+
+@keyframes fall {
+  0% {
+    top: -10%;
+    transform: translateX(0) rotate(0deg);
+  }
+  100% {
+    top: 110%;
+    transform: translateX(50px) rotate(360deg);
+  }
 }
 
 @keyframes float {
@@ -78,10 +194,12 @@
 .title {
   font-size: clamp(1.8rem, 6vw, 2.5rem);
   color: #fff;
-  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
   margin-bottom: 20px;
   text-align: center;
-  font-weight: 800;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 .progress-container {
@@ -111,9 +229,9 @@
 
 .progress-fill {
   height: 100%;
-  background: linear-gradient(90deg, #FF69B4, #FFB6C1, #FF1493);
+  background: linear-gradient(90deg, #FF6B9D, #FF8E8E, #FFA8A8);
   border-radius: 20px;
-  box-shadow: 0 0 20px rgba(255, 105, 180, 0.6);
+  box-shadow: 0 0 20px rgba(255, 107, 157, 0.6);
 }
 
 .progress-text {
@@ -150,10 +268,11 @@
 .cat-head {
   width: 120px;
   height: 100px;
-  background: #FFA500;
+  background: #2E9CFF;
   border-radius: 50% 50% 45% 45%;
   position: relative;
   z-index: 2;
+  box-shadow: 0 0 30px rgba(46, 156, 255, 0.4);
 }
 
 .cat-ear {
@@ -161,7 +280,7 @@
   height: 0;
   border-left: 25px solid transparent;
   border-right: 25px solid transparent;
-  border-bottom: 40px solid #FFA500;
+  border-bottom: 40px solid #2E9CFF;
   position: absolute;
   top: -25px;
 }
@@ -176,13 +295,52 @@
   transform: rotate(15deg);
 }
 
+.santa-hat {
+  position: absolute;
+  top: -45px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+}
+
+.santa-hat-main {
+  width: 0;
+  height: 0;
+  border-left: 45px solid transparent;
+  border-right: 45px solid transparent;
+  border-bottom: 60px solid #FF6B9D;
+  position: relative;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+.santa-hat-trim {
+  position: absolute;
+  bottom: -10px;
+  left: -45px;
+  width: 90px;
+  height: 12px;
+  background: white;
+  border-radius: 6px;
+}
+
+.santa-hat-pom {
+  position: absolute;
+  top: -15px;
+  left: -10px;
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
 .cat-ear::before {
   content: '';
   width: 0;
   height: 0;
   border-left: 15px solid transparent;
   border-right: 15px solid transparent;
-  border-bottom: 25px solid #FFB84D;
+  border-bottom: 25px solid #4DB8FF;
   position: absolute;
   top: 8px;
   left: -15px;
@@ -214,7 +372,7 @@
 .cat-nose {
   width: 12px;
   height: 10px;
-  background: #FF69B4;
+  background: #1a1a2e;
   border-radius: 0 0 50% 50%;
   position: absolute;
   left: 50%;
@@ -256,9 +414,10 @@
 .whisker {
   width: 35px;
   height: 2px;
-  background: #000;
+  background: #fff;
   margin: 8px 0;
   border-radius: 2px;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
 }
 
 .cat-whiskers-left .whisker {
@@ -274,11 +433,12 @@
 .cat-body {
   width: 100px;
   height: 80px;
-  background: #FFA500;
+  background: #2E9CFF;
   border-radius: 50% 50% 40% 40%;
   position: relative;
   margin-top: -10px;
   z-index: 1;
+  box-shadow: 0 0 30px rgba(46, 156, 255, 0.4);
 }
 
 .cat-arms {
@@ -291,7 +451,7 @@
 .cat-arm {
   width: 25px;
   height: 60px;
-  background: #FFA500;
+  background: #2E9CFF;
   border-radius: 40%;
   position: absolute;
   top: 10px;
@@ -381,9 +541,9 @@
 }
 
 .button-primary {
-  background: linear-gradient(135deg, #FF69B4, #FF1493);
+  background: linear-gradient(135deg, #FF6B9D, #FF8E8E);
   color: white;
-  box-shadow: 0 6px 20px rgba(255, 105, 180, 0.4);
+  box-shadow: 0 6px 20px rgba(255, 107, 157, 0.4);
 }
 
 .button-primary:active {
@@ -458,7 +618,7 @@
   border-radius: 20px;
   font-size: 1rem;
   font-weight: 600;
-  color: #FF69B4;
+  color: #2E9CFF;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
   z-index: 10;
   animation: bounce 1s infinite;
