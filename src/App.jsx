@@ -206,16 +206,34 @@ function App() {
   return (
     <div className="app">
       <div className="background">
-        <div className="star star-1">✦</div>
-        <div className="star star-2">✦</div>
-        <div className="star star-3">✦</div>
-        <div className="star star-4">✦</div>
-        <div className="star star-5">✦</div>
-        <div className="star star-6">✦</div>
-        <div className="star star-7">✦</div>
-        <div className="swirl swirl-1">〰</div>
-        <div className="swirl swirl-2">〰</div>
-        <div className="swirl swirl-3">〰</div>
+        <div className="star star-1"></div>
+        <div className="star star-2"></div>
+        <div className="star star-3"></div>
+        <div className="star star-4"></div>
+        <div className="star star-5"></div>
+        <div className="star star-6"></div>
+        <div className="star star-7"></div>
+        <div className="dot dot-1"></div>
+        <div className="dot dot-2"></div>
+        <div className="dot dot-3"></div>
+        <div className="dot dot-4"></div>
+        <div className="dot dot-5"></div>
+        <div className="dot dot-6"></div>
+        <div className="swirl swirl-1">
+          <svg viewBox="0 0 100 80">
+            <path d="M 10 40 Q 30 10, 50 40 T 90 40" />
+          </svg>
+        </div>
+        <div className="swirl swirl-2">
+          <svg viewBox="0 0 120 90">
+            <path d="M 10 45 Q 35 15, 60 45 T 110 45" />
+          </svg>
+        </div>
+        <div className="swirl swirl-3">
+          <svg viewBox="0 0 110 85">
+            <path d="M 10 42 Q 32 12, 55 42 T 100 42" />
+          </svg>
+        </div>
         <div className="snowflake snowflake-1">❄</div>
         <div className="snowflake snowflake-2">❅</div>
         <div className="snowflake snowflake-3">❆</div>
@@ -310,6 +328,10 @@ function App() {
               <div className="cat-ear cat-ear-left"></div>
               <div className="cat-ear cat-ear-right"></div>
               <div className="cat-head">
+                <div className="cat-glasses">
+                  <div className="cat-glass left"></div>
+                  <div className="cat-glass right"></div>
+                </div>
                 <div className="cat-eyes">
                   <div className="cat-eye"></div>
                   <div className="cat-eye"></div>
